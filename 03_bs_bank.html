@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Developer Portfolio - MovieDB Concept</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .carousel-item {
+            height: 70vh;
+            min-height: 350px;
+            background: no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .carousel-caption {
+            bottom: 3rem;
+            background-color: #000000a0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        .movie-card {
+            transition: transform .2s;
+            border: 1px solid #444;
+        }
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+        .movie-card img {
+            height: 450px;
+            object-fit: cover;
+        }
+        .genres span {
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-main">
+
+    <!-- Navigation -->
+    <nav id="navbar-main" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-film"></i> Dev-Flix</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#featured">Featured</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#now-showing">Now Showing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#the-developer">The Developer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Featured Section (Carousel) -->
+    <header id="featured">
+        <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('https://via.placeholder.com/1920x1080/333/fff?text=Project+Alpha')">
+                    <div class="carousel-caption text-start">
+                        <h5 class="display-4">Project Alpha</h5>
+                        <p>고성능 분산 시스템 아키텍처 설계 및 구축. MSA 기반의 확장성과 안정성을 확보한 백엔드 시스템입니다.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#project-modal" data-bs-toggle="modal">자세히 보기</a></p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1920x1080/444/fff?text=Project+Beta')">
+                    <div class="carousel-caption text-center">
+                        <h5 class="display-4">Project Beta</h5>
+                        <p>실시간 데이터 처리를 위한 API 서버 개발. WebSocket과 Kafka를 이용한 대용량 데이터 파이프라인을 구현했습니다.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#project-modal" data-bs-toggle="modal">자세히 보기</a></p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Now Showing (Projects) Section -->
+    <section id="now-showing" class="section bg-black">
+        <div class="container">
+            <h2 class="text-center mb-5 text-light">Now Showing: My Works</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 movie-card bg-dark text-light">
+                        <img src="https://via.placeholder.com/400x550/FF5733/fff?text=E-commerce+API" class="card-img-top" alt="Project 1">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">E-commerce API</h5>
+                            <div class="genres mb-2">
+                                <span class="badge bg-danger">API Design</span>
+                                <span class="badge bg-info">Node.js</span>
+                                <span class="badge bg-success">MongoDB</span>
+                            </div>
+                            <p class="card-text flex-grow-1">결제, 주문, 상품 관리를 위한 RESTful API 서버입니다.</p>
+                            <a href="#project-modal" class="btn btn-primary mt-auto" data-bs-toggle="modal">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 movie-card bg-dark text-light">
+                        <img src="https://via.placeholder.com/400x550/33FF57/000?text=Chat+System" class="card-img-top" alt="Project 2">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Real-time Chat System</h5>
+                            <div class="genres mb-2">
+                                <span class="badge bg-danger">WebSocket</span>
+                                <span class="badge bg-info">Python</span>
+                                <span class="badge bg-warning text-dark">Redis</span>
+                            </div>
+                            <p class="card-text flex-grow-1">실시간 양방향 통신을 지원하는 채팅 시스템 백엔드입니다.</p>
+                            <a href="#project-modal" class="btn btn-primary mt-auto" data-bs-toggle="modal">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 movie-card bg-dark text-light">
+                        <img src="https://via.placeholder.com/400x550/3357FF/fff?text=Cloud+Deployment" class="card-img-top" alt="Project 3">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">CI/CD & Cloud Infra</h5>
+                            <div class="genres mb-2">
+                                <span class="badge bg-danger">DevOps</span>
+                                <span class="badge bg-info">AWS</span>
+                                <span class="badge bg-secondary">Docker</span>
+                            </div>
+                            <p class="card-text flex-grow-1">Docker와 Jenkins를 이용한 CI/CD 파이프라인 및 AWS 인프라 구축.</p>
+                            <a href="#project-modal" class="btn btn-primary mt-auto" data-bs-toggle="modal">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Developer (About & Skills) Section -->
+    <section id="the-developer" class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center">
+                    <img src="https://via.placeholder.com/300" class="img-fluid rounded-circle mb-4 mb-lg-0" alt="Developer">
+                </div>
+                <div class="col-lg-8">
+                    <h2 class="mb-3">The Developer: 홍길동</h2>
+                    <p class="lead">견고하고 확장 가능한 백엔드 시스템을 설계하고 개발하는 것을 사랑하는 개발자입니다. 복잡한 비즈니스 로직을 효율적인 코드로 구현하고, 대용량 트래픽을 안정적으로 처리하는 시스템을 구축하는 데 큰 흥미를 느낍니다.</p>
+                    <h4 class="mt-4">Technical Credits (Skills)</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Languages
+                            <span class="d-flex flex-wrap justify-content-end">
+                                <span class="badge bg-primary m-1">Python</span>
+                                <span class="badge bg-primary m-1">JavaScript/Node.js</span>
+                                <span class="badge bg-primary m-1">Go</span>
+                            </span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Databases
+                            <span class="d-flex flex-wrap justify-content-end">
+                                <span class="badge bg-success m-1">PostgreSQL</span>
+                                <span class="badge bg-success m-1">MySQL</span>
+                                <span class="badge bg-success m-1">MongoDB</span>
+                                <span class="badge bg-success m-1">Redis</span>
+                            </span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Infra & DevOps
+                            <span class="d-flex flex-wrap justify-content-end">
+                                <span class="badge bg-info m-1">AWS</span>
+                                <span class="badge bg-info m-1">Docker</span>
+                                <span class="badge bg-info m-1">Kubernetes</span>
+                                <span class="badge bg-info m-1">Jenkins</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-black">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-center mb-5 text-light">Get In Touch (Casting Call)</h2>
+                    <form>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                            <label for="email">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-center">
+        <div class="container d-flex justify-content-center align-items-center">
+            <p class="mb-0 me-3">Copyright &copy; 2025 홍길동</p>
+            <a href="#" class="text-light me-3"><i class="bi bi-github fs-4"></i></a>
+            <a href="#" class="text-light"><i class="bi bi-linkedin fs-4"></i></a>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal fade" id="project-modal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Project Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://via.placeholder.com/800x450" class="img-fluid mb-3" alt="Project Image">
+                    <p>프로젝트에 대한 상세 설명입니다. 여기에는 프로젝트의 목표, 개발 과정, 본인의 역할, 사용된 기술 스택, 주요 기능 구현 방법, 성능 개선 경험, 문제 해결 사례 등을 구체적으로 작성할 수 있습니다.</p>
+                    <h5>Technical Details:</h5>
+                    <ul>
+                        <li><strong>Architecture:</strong> Microservice Architecture (MSA)</li>
+                        <li><strong>Backend:</strong> Node.js (Express) with TypeScript</li>
+                        <li><strong>Database:</strong> PostgreSQL for main data, Redis for caching</li>
+                        <li><strong>Deployment:</strong> Docker container on AWS ECS</li>
+                        <li><strong>APIs:</strong> RESTful API with JWT-based authentication</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-outline-secondary"><i class="bi bi-github"></i> View on GitHub</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
